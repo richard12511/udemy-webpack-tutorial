@@ -1,8 +1,9 @@
-import Polars from './ones-polars.jpg';
+import Polars from './ones-polars.jpg'
+import altText from './altText.txt'
 
 function addImage() {
     const img = document.createElement('img')
-    img.alt = 'Polars'
+    img.alt = altText
     img.width = 300
     img.src = Polars
     const body = document.querySelector('body')

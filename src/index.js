@@ -1,5 +1,5 @@
-import helloWorld from './hello-world'
+import HelloWorldButton from './components/hellow-world-button/hello-world-button'
 import addImage from './add-image'
 
-helloWorld()
-addImage()
+const hwb = new HelloWorldButton()
+hwb.render()
