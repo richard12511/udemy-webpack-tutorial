@@ -46,6 +46,12 @@ module.exports = {
                     }
                 }
 
+            },
+            {
+                test: /\.hbs$/,
+                use: [
+                    'handlebars-loader'
+                ]
             }
         ]
     },
@@ -55,6 +61,10 @@ module.exports = {
             filename: 'styles.[contenthash].css',
         }),
         new CleanWebpackPlugin(),
-        new HtmlWebpackPlugin()
+        new HtmlWebpackPlugin({
+            title: 'Hello world',
+            template: 'src/index.hbs',
+            description: 'Some description'
+        })
     ]
 }
