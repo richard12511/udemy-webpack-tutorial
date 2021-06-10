@@ -4,16 +4,19 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 
 module.exports = {
-    entry: './src/index.js',
+    entry: {
+        'hello-world': './src/hello-world.js',
+        'kiwi': './src/kiwi.js'
+    },
     output: {
-        filename: 'bundle.js',
+        filename: '[name].bundle.js',
         path: path.resolve(__dirname, './dist'),
         publicPath: ''
     },
     mode: 'development',
     devServer: {
         contentBase: path.resolve(__dirname, './dist'),
-        index: 'index.html',
+        index: 'hello-world.html',
         port: 9000,
         writeToDisk: true
     },
@@ -62,9 +65,19 @@ module.exports = {
     plugins: [
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
+            filename: 'hello-world.html',
+            chunks: ['hello-world'],
             title: 'Hello world',
-            template: 'src/index.hbs',
+            template: 'src/page-template.hbs',
+            description: 'Some description'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'kiwi.html',
+            chunks: ['kiwi'],
+            title: 'Kiwi',
+            template: 'src/page-template.hbs',
             description: 'Some description'
         })
+
     ]
 }

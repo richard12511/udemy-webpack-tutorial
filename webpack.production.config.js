@@ -7,7 +7,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 module.exports = {
     entry: {
         'hello-world': './src/hello-world.js',
-        'polars': './src/polars.js'
+        'kiwi': './src/kiwi.js'
     },
     output: {
         filename: '[name].[contenthash].js',
@@ -76,9 +76,9 @@ module.exports = {
             minify: false
         }),
         new HtmlWebpackPlugin({
-            filename: 'polars.html',
-            chunks: ['polars'],
-            title: 'Polars',
+            filename: 'kiwi.html',
+            chunks: ['kiwi'],
+            title: 'Kiwi',
             template: 'src/page-template.hbs',
             description: 'Some description',
             minify: false
